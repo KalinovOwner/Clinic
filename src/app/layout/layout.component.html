@@ -1,0 +1,62 @@
+<nz-layout class="app-layout">
+   <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="xs" [(nzCollapsed)]="isCollapsed">
+      <div class="sidebar-logo">
+         <a routerLink="/profile">
+            <nz-avatar nzSize="large" nzIcon="user"></nz-avatar>
+            <h1 *ngIf="!isCollapsed">Калинов Егор Юрьевич <br> Разработчик</h1>
+         </a>
+         <button *ngIf="!isCollapsed" nz-button nzType="default" nzSize="small" nzDanger>Выход</button>
+      </div>
+      <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+         <li nz-submenu nzTitle="Администратор клиники" nzIcon="user">
+            <ul>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/clients'>Список клиентов</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/doctors'>Список врачей</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/calendar'>Календарь</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/pushes'>Пуши</a>
+               </li>
+            </ul>
+         </li>
+         <li nz-submenu nzOpen nzTitle="Administrator" nzIcon="desktop">
+            <ul>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/news'>Добавление новостей</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/banners'>Добавление банеров</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/shares'>Добавление акций</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/roles'>Изменение ролей</a>
+               </li>
+            </ul>
+         </li>
+         <li nz-submenu nzOpen nzTitle="Врач" nzIcon="heart">
+            <ul>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/list-clients-doctor'>Список клиентов врача</a>
+               </li>
+               <li nz-menu-item nzMatchRouter>
+                  <a routerLink='/calendar-doctor'>Календарь врача</a>
+               </li>
+            </ul>
+         </li>
+      </ul>
+   </nz-sider>
+   <nz-layout>
+      <nz-content>
+         <div class="inner-content">
+            <router-outlet></router-outlet>
+         </div>
+      </nz-content>
+   </nz-layout>
+</nz-layout>

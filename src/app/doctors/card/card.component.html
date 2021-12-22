@@ -1,0 +1,64 @@
+<h1 class="header-h1">Карточка клиента {{id}}</h1>
+<main class="border-content">
+   <h2>Данные клиента</h2>
+   <form nz-form nzLayout='vertical'>
+      <div class="block">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">ФИО</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Должность</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Роль</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+      <div class="block-2">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">ID</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Время работы</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+      <div class="block-3">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input disabled nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+   </form>
+   <h2>Рецепт</h2>
+   <div>
+      <textarea nz-input placeholder="Введите текст рецепта" nzAutosize></textarea>
+   </div>
+   <h2>Назначение</h2>
+   <div>
+      <textarea nz-input placeholder="Введите текст назначения" nzAutosize></textarea>
+   </div>
+
+   <button nz-button nzType="primary" (click)="showModal()">
+      <span>Сохранить</span>
+   </button>
+   <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading">
+      <p *nzModalContent>Вы действительно хотите внести изменения в карточку клиента?</p>
+   </nz-modal>
+</main>

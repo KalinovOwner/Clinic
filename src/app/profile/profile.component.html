@@ -1,0 +1,75 @@
+<h1 class="header-h1">Профиль</h1>
+<div class="border-content">
+<header class="avatar">
+   <div>
+      <nz-avatar nzIcon="user">
+      </nz-avatar>
+      <nz-upload
+      class="avatar-uploader"
+      nzName="avatar"
+      nzListType="picture-card"
+      [nzShowUploadList]="false"
+      [nzBeforeUpload]="beforeUpload"
+      (nzChange)="handleChange($event)"
+   >
+      <ng-container *ngIf="!avatarUrl">
+      <i class="upload-icon" nz-icon [nzType]="loading ? 'loading' : ''"></i>
+      <div class="ant-upload-text">Загрузить фото</div>
+      </ng-container>
+      <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+   </nz-upload>
+   </div>
+</header>
+
+<main>
+   <form nz-form nzLayout='vertical'>
+      <div class="block">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">ФИО</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Должность</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Роль</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+      <div class="block-2">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">ID</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Время работы</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+      <div class="block-3">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Required</nz-form-label>
+                  <input nz-input [ngModel]="'Required Input'" name="required" required />
+         </nz-form-item>
+      </div>
+   </form>
+</main>
+</div>
+<a>
+   <footer class="border-content">
+      <span>Обновить</span>
+   </footer>
+</a>

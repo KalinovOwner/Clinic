@@ -1,0 +1,27 @@
+<H1 class="header-h1">Добавление новостей</H1>
+
+<main class="border-content">
+
+   <h2>Файлы для новости</h2>
+   <nz-upload nzType="drag" [nzMultiple]="true" nzAction="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+      (nzChange)="handleChange($event)">
+      <p class="ant-upload-drag-icon">
+         <i nz-icon nzType="inbox"></i>
+      </p>
+      <p class="ant-upload-text">Нажмите или перетащите файл в область для загрузги файла</p>
+      <p class="ant-upload-hint">
+         Поддержка одиночной или массовой загрузки.
+      </p>
+   </nz-upload>
+
+   <h2>Текст новости</h2>
+   <textarea nz-input placeholder="Введите текст новости" nzAutosize></textarea>
+
+   <button nz-button nzType="primary" (click)="showModal()">
+      <span>Опубликовать</span>
+   </button>
+   <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading">
+      <p *nzModalContent>Вы действительно хотите опубликовать новость?</p>
+   </nz-modal>
+</main>

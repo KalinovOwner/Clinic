@@ -1,0 +1,20 @@
+<H1 class="header-h1">Календарь врача</H1>
+<main class="border-content">
+  <nz-calendar (nzSelectChange)="selectChange($event)">
+    <a *nzDateCell="let date" class="events" (click)="redirectTo()">
+      <ng-container [ngSwitch]="date.getDate()">
+        <ng-container *ngSwitchCase="date.getDate()">
+          <li *ngFor="let item of listDataMap.eight">
+            <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+          </li>
+        </ng-container>
+      </ng-container>
+    </a>
+    <ng-container *nzMonthCell="let month">
+      <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+        <section>{{ monthData }}</section>
+        <span>Backlog number</span>
+      </div>
+    </ng-container>
+  </nz-calendar>
+</main>

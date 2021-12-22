@@ -1,0 +1,25 @@
+<H1 class="header-h1">Добавление акций</H1>
+
+<main class="border-content">
+   <h2>Выбор услуг</h2>
+   <nz-select [nzMaxTagCount]="30" [nzMaxTagPlaceholder]="tagPlaceHolder" nzMode="multiple" nzPlaceHolder="Пожалуйста выберите услугу"
+      [(ngModel)]="listOfSelectedValue">
+      <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
+   </nz-select>
+   <ng-template #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more selected</ng-template>
+
+   <h2>Выбор акций</h2>
+   <nz-select [nzMaxTagCount]="30" [nzMaxTagPlaceholder]="tagPlaceHolder" nzMode="multiple" nzPlaceHolder="Пожалуйста выберите акцию"
+      [(ngModel)]="listOfSelectedValue">
+      <nz-option *ngFor="let item of listOfOption" [nzLabel]="item" [nzValue]="item"></nz-option>
+   </nz-select>
+   <ng-template #tagPlaceHolder let-selectedList>and {{ selectedList.length }} more selected</ng-template>
+
+   <button nz-button nzType="primary" (click)="showModal()">
+      <span>Установить</span>
+   </button>
+   <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading">
+      <p *nzModalContent>Вы действительно хотите установить акцию?</p>
+   </nz-modal>
+</main>

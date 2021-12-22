@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+.border-content {
+   background-color: #f3f2f7;
+   box-shadow: 0 10px 35px 5px rgb(0 21 40);
+   border-radius: 5px;
+   padding: 2rem;
+}
+
+.header-h1 {
+   background-color: #f3f2f7;
+   box-shadow: 0 0 65px 135px rgb(0 33 64);
+   border-radius: 5px;
+   padding: 1rem;
+   font-family: "Signboard", sans-serif;
+   color: #002140;
+}
+
+h1,
+h2 {
+   text-align: center;
+}
+
+.ant-upload.ant-upload-select-picture-card {
+   width: 104 px;
+   height: 104 px;
+   margin-right: 8 px;
+   margin-bottom: 8 px;
+   text-align: center;
+   vertical-align: top;
+   background-color: #e7e4f5;
+   border: 0 px dashed #d9d9d9;
+   border-radius: 45px;
+   cursor: pointer;
+   transition: border-color 0.3s;
+}
+
+.ant-upload {
+   box-sizing: border-box;
+   margin: 5px;
+   padding: 0;
+   color: rgba(0, 0, 0, 0.85);
+   font-size: 14px;
+   font-variant: tabular-nums;
+   line-height: 1.5715;
+   list-style: none;
+   font-feature-settings: "tnum", "tnum";
+   outline: 0;
+}
+
+.ant-layout {
+   display: contents;
+   flex: auto;
+   flex-direction: column;
+   min-height: 0;
+   background: #f0f2f5;
+}
+
+.ant-modal-wrap {
+   left: 4.5%;
+}
+
+.ant-upload.ant-upload-drag {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   background: #fafafa;
+   border: 1 px dashed #d9d9d9;
+   border-radius: 2 px;
+   cursor: pointer;
+   transition: border-color 0.3s;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.ant-table-thead > tr > th {
+   text-align: center;
+}
+
+.ant-table-tbody > tr > td {
+   text-align: center;
+}
+
+@font-face {
+   font-family: "Signboard";
+   src: url(./assets/fonts/SignboardCpsNr.ttf);
+   font-weight: normal;
+}
+
+@font-face {
+   font-family: "ArnoPro";
+   src: url(./assets/fonts/ArnoPro.otf);
+   font-weight: normal;
+}
+
+.ant-picker-calendar-full .ant-picker-panel .ant-picker-calendar-date-content {
+   font-family: "ArnoPro", sans-serif;
+   font-weight: bold;
+   text-align: center;
+   color: #002140;
+}
+
+.ant-table-tbody > tr > td > a {
+   font-family: "Signboard";
+   margin: 0.5rem;
+}
+
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+   border-radius: 20px;
+   text-align: center;
+}
+
+.ant-picker-input > input {
+   text-align: center;
+}

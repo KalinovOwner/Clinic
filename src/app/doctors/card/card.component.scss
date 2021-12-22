@@ -1,0 +1,49 @@
+form {
+   display: -webkit-box;
+   .block-2 {
+      margin-left: auto;
+   }
+   .block-3 {
+      margin-left: auto;
+   }
+}
+
+.ant-form-item-label {
+   display: table;
+   flex-grow: 0;
+   white-space: nowrap;
+   margin: auto;
+   font-weight: bold;
+}
+
+input {
+   width: 15rem;
+   text-align: center;
+   border-radius: 20px;
+}
+
+textarea {
+   text-align: center;
+}
+
+.ant-input[disabled] {
+   color: rgb(4 13 135);
+   cursor: auto;
+}
+
+element.style {
+   height: 58 px;
+}
+.ant-input:placeholder-shown {
+   text-overflow: ellipsis;
+}
+textarea[_ngcontent-lkj-c192] {
+   text-align: center;
+}
+
+button {
+   display: flex;
+   margin-top: 1rem;
+   margin-left: auto;
+   margin-right: auto;
+}

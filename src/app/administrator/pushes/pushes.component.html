@@ -1,0 +1,56 @@
+<H1 class="header-h1">
+   <button class="button-head" nz-button nzType="primary" routerLink="/notifications/push-mailings" nz-tooltip
+      nzTooltipTitle="Выполненные рассылки">
+   </button>
+   Рассылка пуш-уведомлений
+</H1>
+
+<main class="border-content">
+   <form (ngSubmit)="submitForm()" nz-form>
+
+      <nz-form-item>
+         <nz-form-label [nzSpan]="7">Выборка пользователей</nz-form-label>
+         <nz-form-control [nzSpan]="12">
+            <nz-select name="target_selection">
+               <nz-option></nz-option>
+            </nz-select>
+         </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="mt-20">
+         <nz-form-label [nzSpan]="7">Заголовок</nz-form-label>
+         <nz-form-control [nzSpan]="12">
+            <input type="text" nz-input name="title">
+         </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item class="mt-20">
+         <nz-form-label [nzSpan]="7">Сообщение</nz-form-label>
+         <nz-form-control [nzSpan]="12">
+            <textarea nz-input></textarea>
+         </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row>
+         <nz-form-label [nzSpan]="7">
+            Время завершения рассылки
+         </nz-form-label>
+         <nz-form-control [nzSpan]="12">
+            <nz-date-picker nzFormat="yyyy-MM-dd hh:mm:ss" name="end_time" nzPlaceHolder="Время завершения рассылки"
+               nzShowTime [(ngModel)]="date">
+            </nz-date-picker>
+         </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item nz-row>
+         <nz-form-control class="button-foot">
+            <button nz-button nzType="primary" class="create-btn">Отправить
+            </button>
+            <button nz-button nzType="primary">
+               Сколько девайсов?
+            </button>
+         </nz-form-control>
+      </nz-form-item>
+
+   </form>
+</main>

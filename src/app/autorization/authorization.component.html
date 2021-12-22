@@ -1,0 +1,18 @@
+<header class="welcome">
+   <span style="text-decoration: underline">Clinic admin</span>
+   <br>
+   <span>Авторизация</span>
+</header>
+
+<div class="login-form">
+   <form (ngSubmit)="submitForm()" nz-form>
+
+      <button [nzType]="'primary'" class="login-form-button login-form-margin" nz-button>Запросить ключ
+      </button>
+   </form>
+   <nz-input-group nzPrefixIcon="lock">
+      <input nz-input placeholder="Ключ из почты" type="password" />
+   </nz-input-group>
+   <button class="login-button" nz-button>Войти
+   </button>
+</div>

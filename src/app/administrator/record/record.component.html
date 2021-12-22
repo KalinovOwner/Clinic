@@ -1,0 +1,62 @@
+<H1 class="header-h1">Добавление записи на {{selectDate | date: 'EEEE d MMMM y' : '' : 'RU'}}</H1>
+
+<main class="border-content">
+   <form nz-form nzLayout='vertical'>
+      <div class="block">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Врач</nz-form-label>
+            <nz-select
+      nzMode="multiple"
+      class="select"
+      nzPlaceHolder="Укажите врача"
+      nzAllowClear
+      nzShowSearch
+      nzServerSearch
+      [(ngModel)]="selectedUser"
+      (nzOnSearch)="onSearch($event)"
+    >
+      <ng-container *ngFor="let o of optionList">
+        <nz-option *ngIf="!isLoading" [nzValue]="o" [nzLabel]="o"></nz-option>
+      </ng-container>
+      <nz-option *ngIf="isLoading" nzDisabled nzCustomContent>
+        <i nz-icon nzType="loading" class="loading-icon"></i>
+        Loading Data...
+      </nz-option>
+    </nz-select>
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Дата</nz-form-label>
+            <nz-date-picker [(ngModel)]="date" (ngModelChange)="onChange($event)"></nz-date-picker>
+         </nz-form-item>
+      </div>
+      <div class="block-2">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Клиент</nz-form-label>
+                  <input nz-input placeHolder="Укажите клиента" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Комментарий</nz-form-label>
+            <textarea nz-input placeholder="Введите текст комментария" nzAutosize></textarea>
+         </nz-form-item>
+      </div>
+      <div class="block-3">
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Животное</nz-form-label>
+                  <input nz-input placeHolder="Укажите животное" name="required" required />
+         </nz-form-item>
+         <nz-form-item>
+            <nz-form-label [nzSpan]="5">Время</nz-form-label>
+            <nz-time-picker [(ngModel)]="time" [nzDefaultOpenValue]="defaultOpenValue"></nz-time-picker>
+         </nz-form-item>
+      </div>
+   </form>
+   
+   <button nz-button nzType="primary" (click)="showModal()">
+      <span>Записать</span>
+   </button>
+
+   <nz-modal [(nzVisible)]="isVisible" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading">
+      <p *nzModalContent>Вы действительно хотите добавить запись?</p>
+   </nz-modal>
+</main>

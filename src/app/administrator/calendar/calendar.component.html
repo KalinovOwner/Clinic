@@ -1,0 +1,30 @@
+<H1 class="header-h1">Календарь</H1>
+<main class="border-content">
+   <nz-calendar (nzSelectChange)="selectChange($event)">
+      <a *nzDateCell="let date" class="events" (click)="showModal()">
+         <ng-container [ngSwitch]="date.getDate()">
+            <ng-container *ngSwitchCase="date.getDate()">
+               <li *ngFor="let item of listDataMap.eight">
+                  <nz-badge [nzStatus]="item.type" [nzText]="item.content"></nz-badge>
+               </li>
+            </ng-container>
+         </ng-container>
+      </a>
+      <ng-container *nzMonthCell="let month">
+         <div *ngIf="getMonthData(month) as monthData" class="notes-month">
+            <section>{{ monthData }}</section>
+            <span>Backlog number</span>
+         </div>
+      </ng-container>
+   </nz-calendar>
+</main>
+
+    <nz-modal [(nzVisible)]="isVisible" nzClosable=false nzFooter = null (nzOnCancel)="handleCancel()">
+      <ng-container *nzModalContent>
+        <p class="modal-content">Выберите действия на дату - <br /> {{selectDate | date: 'EEEE d MMMM y' : '' : 'RU'}}</p>
+      </ng-container>
+      <div class="footer-modal" *nzModalFooter>
+         <button [nzBlock]=true nz-button nzType="primary" (click)="redirectToList()">Посмотреть список записей</button>
+         <button [nzBlock]=true nz-button nzType="primary" (click)="redirectToRecord()">Добавить запись</button>
+       </div>
+    </nz-modal>

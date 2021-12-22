@@ -1,0 +1,36 @@
+.login-form {
+   position: relative;
+   max-width: 500px;
+   margin: auto;
+   padding: 20px;
+}
+
+.login-form-margin {
+   margin-bottom: 16px;
+}
+
+.login-form-button {
+   width: 100%;
+}
+
+.login-button {
+   margin-top: 23px;
+   width: 100%;
+}
+
+.background {
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   min-width: 100%;
+   min-height: 100%;
+}
+
+.welcome {
+   position: relative;
+   text-align: center;
+   font-weight: bolder;
+   font-size: 30px;
+   color: rgb(17, 6, 80);
+   font-family: Luminari, fantasy;
+}
